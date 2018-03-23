@@ -109,9 +109,7 @@ def dehtml(text):
     try:
         parser = _DeHTMLParser()
         if text:
-            if sys.version_info > (3, 0):
-                text = str(text, 'UTF-8')
-            else:
+            if sys.version_info < (3, 0):
                 text = text.decode('UTF-8')
 
         else:
